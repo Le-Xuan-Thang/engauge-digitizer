@@ -12,6 +12,10 @@ The steps below match the current repository state and the successful local buil
 
 - `bin/Engauge.exe`
 
+Working screenshot for this Windows patch set:
+
+![Software screen](../images/SoftwareScreen.png)
+
 ## 1. Short Answer
 
 No, `Engauge.exe` alone is not enough.
@@ -193,7 +197,7 @@ dev\windows\package_portable_msvc2022.bat D:\Release\Engauge
 By default it creates:
 
 - `dist\Engauge\`
-- `dist\Engauge-portable.zip`
+- `dist\Engauge-portable-Le-Xuan-Thang.zip`
 
 The zip is the file you can send to end users.
 

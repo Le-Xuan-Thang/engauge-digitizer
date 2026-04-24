@@ -13,7 +13,7 @@ if not "%~1"=="" set "PACKAGE_DIR=%~f1"
 
 set "DIST_ROOT=%PACKAGE_DIR%"
 for %%I in ("%PACKAGE_DIR%\..") do set "DIST_PARENT=%%~fI"
-set "ZIP_FILE=%DIST_PARENT%\Engauge-portable.zip"
+set "ZIP_FILE=%DIST_PARENT%\Engauge-portable-Le-Xuan-Thang.zip"
 set "HELP_WORK=%DIST_PARENT%\help_build"
 
 if not exist "%REPO_ROOT%\bin\Engauge.exe" (
@@ -115,6 +115,7 @@ for %%F in ("%REPO_ROOT%\translations\engauge_*.ts") do (
 
 >"%PACKAGE_DIR%\README-portable.txt" (
   echo Engauge Portable
+  echo Maintained build by Le Xuan Thang
   echo.
   echo Run Engauge.exe from this folder.
   echo Do not separate Engauge.exe from the DLLs and plugin folders.
