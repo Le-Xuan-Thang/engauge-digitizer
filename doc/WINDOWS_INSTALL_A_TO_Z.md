@@ -12,10 +12,6 @@ The steps below match the current repository state and the successful local buil
 
 - `bin/Engauge.exe`
 
-Working screenshot for this Windows patch set:
-
-![Software screen](../images/SoftwareScreen.png)
-
 ## 1. Short Answer
 
 No, `Engauge.exe` alone is not enough.
@@ -197,7 +193,7 @@ dev\windows\package_portable_msvc2022.bat D:\Release\Engauge
 By default it creates:
 
 - `dist\Engauge\`
-- `dist\Engauge-portable-Le-Xuan-Thang.zip`
+- `dist\Engauge-portable.zip`
 
 The zip is the file you can send to end users.
 
@@ -222,7 +218,35 @@ If you do not want to use the script, you must manually create the same layout a
 
 The application looks for help relative to `applicationDirPath()`, so `documentation\engauge.qhc` and the plugin folders must stay beside the executable in the expected structure.
 
-## 6. Known Packaging Rules
+## 6. Creating An MSI Installer
+
+The MSI installer is built from the portable folder, so create the portable package first:
+
+```bat
+dev\windows\package_portable_msvc2022.bat
+```
+
+Install WiX Toolset v3.14.1 or v3.11, then make sure `candle.exe` and `light.exe` are available on `PATH`.
+
+Official WiX v3 releases are published at:
+
+- `https://github.com/wixtoolset/wix3/releases`
+
+Build the MSI from the repository root:
+
+```bat
+powershell -ExecutionPolicy Bypass -File dev\windows\package_msi_msvc2022.ps1
+```
+
+The default output is:
+
+- `dist\Engauge-Digitizer-12.9.1-Windows-x64-Le-Xuan-Thang.msi`
+
+The MSI installs the same files as the portable package, adds Start Menu and Desktop shortcuts, and uses the Engauge icon from `src\img\digitizer.ico`.
+
+Code signing is still separate. An unsigned MSI can still trigger Windows SmartScreen warnings on other computers.
+
+## 7. Known Packaging Rules
 
 For the current Windows configuration:
 
@@ -232,7 +256,7 @@ For the current Windows configuration:
 - Translation loading depends on `translations/`
 - SQLite support depends on `sqldrivers/qsqlite.dll`
 
-## 7. Current Repo-Specific Notes
+## 8. Current Repo-Specific Notes
 
 The current repo contains local Windows build adjustments:
 
@@ -242,7 +266,7 @@ The current repo contains local Windows build adjustments:
 
 If you build on another Windows machine and `qmake` works normally, you may not need the same workaround.
 
-## 8. Recommended Distribution Strategy
+## 9. Recommended Distribution Strategy
 
 If you want to share the app with non-technical Windows users, distribute one of these:
 

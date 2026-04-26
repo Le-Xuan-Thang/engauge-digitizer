@@ -2,6 +2,7 @@
 
 - Portable Windows release: [Engauge Digitizer 12.9 - Windows MSVC Portable Fixes](https://github.com/Le-Xuan-Thang/engauge-digitizer/releases/tag/v12.9-lxt-windows-msvc-portable-2)
 - Direct download: [Engauge-portable-Le-Xuan-Thang.zip](https://github.com/Le-Xuan-Thang/engauge-digitizer/releases/download/v12.9-lxt-windows-msvc-portable-2/Engauge-portable-Le-Xuan-Thang.zip)
+- MSI installer: [Engauge-Digitizer-12.9.1-Windows-x64-Le-Xuan-Thang.msi](https://github.com/Le-Xuan-Thang/engauge-digitizer/releases/download/v12.9-lxt-windows-msvc-portable-2/Engauge-Digitizer-12.9.1-Windows-x64-Le-Xuan-Thang.msi)
 - Pull request upstream: [akhuettel/engauge-digitizer#7](https://github.com/akhuettel/engauge-digitizer/pull/7)
 
 Engauge Digitizer was written and maintained by Mark Mitchell, whose last project activity was in 2022
